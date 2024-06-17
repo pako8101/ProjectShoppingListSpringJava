@@ -38,6 +38,10 @@
             </div>
             <input th:field="*{password}" th:errorclass="bg-danger" type="password" class="form-control" id="password"
                    name="password"/>
+            <label for="show-password" class="field__toggle">
+                <input type="checkbox" id="show-password" class="field__toggle-input" />
+                Show password
+            </label>
             <small th:if="${#fields.errors('password')}" th:errors="*{password}" class="text-danger">Password error
                 message</small>
         </div>
@@ -61,5 +65,42 @@
 <footer class="footer bg-transparent py-2">
     <th:block th:include="~{fragments/footer}"></th:block>
 </footer>
+<script type="text/javascript">
+
+    // Gather our DOM references.
+    var username = document.querySelector( "#username" );
+    var password = document.querySelector( "#password" );
+    var toggle = document.querySelector( "#show-password" );
+
+    // Set some default values just to make the demo easier to use.
+    username.value = "BenJamin2002";
+    password.value = "dontTazeMeBro!";
+
+    // NOTE: The "(input)" event doesn't work on checkboxes in Safari or IE. As such,
+    // I'm using the "(click)" event to make this works cross-browser.
+    toggle.addEventListener( "click", handleToggleClick, false );
+
+    // --------------------------------------------------------------------------- //
+    // --------------------------------------------------------------------------- //
+
+    // I handle the toggle click, changing the TYPE of password input.
+    function handleToggleClick( event ) {
+
+        if ( this.checked ) {
+
+            console.warn( "Change input 'type' to: text" );
+            password.type = "text";
+
+        } else {
+
+            console.warn( "Change input 'type' to: password" );
+            password.type = "password";
+
+        }
+
+    }
+
+</script>
+
 </body>
 </html>

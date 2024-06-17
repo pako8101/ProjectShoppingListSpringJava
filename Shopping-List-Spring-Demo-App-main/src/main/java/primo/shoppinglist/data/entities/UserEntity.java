@@ -27,7 +27,7 @@ public class UserEntity extends BaseEntity {
         this.username = username;
     }
 
-    @Column
+    @Column(name = "password",nullable = false)
     @Length(min = 3, max = 20, message = "The password length must be between 3 and 20 characters")
     public String getPassword() {
         return password;
@@ -37,7 +37,7 @@ public class UserEntity extends BaseEntity {
         this.password = password;
     }
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "email",nullable = false, unique = true)
     @Email
     public String getEmail() {
         return email;

@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class UserRegisterBindingModel {
     private String username;
@@ -15,7 +16,7 @@ public class UserRegisterBindingModel {
     public UserRegisterBindingModel() {
     }
 
-    @Length(min = 3, max = 20, message = "The username must be between 3 and 20 characters")
+    @Size(min = 3, max = 20, message = "The username must be between 3 and 20 characters")
     @NotBlank(message = "The field must not be empty")
     public String getUsername() {
         return username;
@@ -25,7 +26,7 @@ public class UserRegisterBindingModel {
         this.username = username;
     }
 
-    @Length(min = 3, max = 20, message = "The password must be between 3 and 20 characters")
+    @Size(min = 3, max = 20, message = "The password must be between 3 and 20 characters")
     @NotBlank(message = "The field must not be empty")
     public String getPassword() {
         return password;
@@ -35,7 +36,7 @@ public class UserRegisterBindingModel {
         this.password = password;
     }
 
-    @Length(min = 3, max = 20, message = "The password length must be between 3 and 20 characters")
+    @Size(min = 3, max = 20, message = "The password length must be between 3 and 20 characters")
     @NotBlank
     public String getConfirmPassword() {
         return confirmPassword;

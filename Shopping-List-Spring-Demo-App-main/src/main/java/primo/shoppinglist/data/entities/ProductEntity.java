@@ -20,7 +20,7 @@ public class ProductEntity extends BaseEntity {
     public ProductEntity() {
     }
 
-    @Column(unique = true)
+    @Column(unique = true,nullable = false)
     @Length(min = 3, max = 20, message = "The name must be between 3 and 20 characters")
     public String getName() {
         return name;
@@ -40,7 +40,7 @@ public class ProductEntity extends BaseEntity {
         this.description = description;
     }
 
-    @Column
+    @Column(nullable = false)
     @DecimalMin("0")
     public BigDecimal getPrice() {
         return price;
@@ -60,7 +60,7 @@ public class ProductEntity extends BaseEntity {
         this.neededBefore = neededBefore;
     }
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     public CategoryEntity getCategory() {
         return category;
     }
