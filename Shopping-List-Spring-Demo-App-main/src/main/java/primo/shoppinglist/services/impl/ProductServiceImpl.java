@@ -32,9 +32,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void addProduct(ProductServiceModel productServiceModel) {
-        ProductEntity productEntity = modelMapper.map(productServiceModel, ProductEntity.class);
+        ProductEntity productEntity = modelMapper.map(productServiceModel,
+                ProductEntity.class);
 
-        productEntity.setCategory(categoryService.getCategoryByName(productServiceModel.getCategory()));
+        productEntity.setCategory(categoryService
+                .getCategoryByName(productServiceModel.getCategory()));
 
         productRepository.save(productEntity);
     }

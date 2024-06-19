@@ -21,6 +21,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(HttpSession httpSession, Model model) {
+
         if (httpSession.getAttribute("user") == null) {
             return "index";
         }
@@ -34,4 +35,5 @@ public class HomeController {
 
         return "home";
     }
+
 }
