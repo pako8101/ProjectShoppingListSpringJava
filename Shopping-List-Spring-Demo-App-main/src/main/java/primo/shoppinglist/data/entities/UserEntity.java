@@ -37,7 +37,7 @@ public class UserEntity extends BaseEntity {
         this.password = password;
     }
 
-    @Column(name = "email",nullable = false, unique = true)
+    @Column(name = "email",nullable = false)
     @Email
     public String getEmail() {
         return email;

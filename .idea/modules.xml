@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ProjectShoppingListSpringJava.iml" filepath="$PROJECT_DIR$/.idea/ProjectShoppingListSpringJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shopping-List-Spring-Demo-App-main/shopping-list.iml" filepath="$PROJECT_DIR$/Shopping-List-Spring-Demo-App-main/shopping-list.iml" />
     </modules>
   </component>
 </project>
